@@ -1,0 +1,24 @@
+@startuml
+title Genel Gorev (USE CASE)
+
+actor :Admin: as Ad
+actor Akademisyen as Ak
+actor Ogrenci as Ogr
+Ak <|--Ad
+Ogr <|--Ak
+Ogr -> (Login)
+Ogr -up-> (Logout)
+
+Ak -left-> (Ogrenci Ekle)
+Ak -right-> (Ogrenci Sil)
+Ak --> (Not Ekle)
+Ak --> (Not Sil)
+Ak --> (Duyuru Ekle)
+Ak --> (Duyuru Sil)
+
+Ad --> (Kategori Ekle)
+Ad --> (Kategori Sil)
+Ad --> (Ogretim Elemaný Ekle)
+Ad --> (Ogretim Elemaný Sil)
+Ad --> (Kategori Düzenleme)
+@enduml
