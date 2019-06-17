@@ -1,0 +1,24 @@
+@startuml
+
+title MementoPattern
+
+class GoGo{
+    +int Istasyon
+    +string Sinif
+    +GoGoMemento Kaydet()
+    +void OncekiniYukle()
+}
+
+class GoGoMemento{
+    
+    +string Sinif
+}
+
+class GoGoTraker{
+    +GoGoMemento Memento
+}
+
+GoGo <|-down-GoGoMemento
+GoGoMemento <|-down- GoGoTraker
+
+@enduml
