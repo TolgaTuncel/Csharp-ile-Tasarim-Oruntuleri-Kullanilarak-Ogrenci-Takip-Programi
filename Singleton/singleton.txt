@@ -1,0 +1,13 @@
+@startuml
+
+title SingletonPattern
+
+class OgrenciManagerSingleton{
+    -static OgrenciManagerSingleton
+    +object _lockObject
+    -OgrenciManagerSingleton()
+    +static OgrenciManagerSingleton()
+    +void Save()
+}
+
+@enduml
