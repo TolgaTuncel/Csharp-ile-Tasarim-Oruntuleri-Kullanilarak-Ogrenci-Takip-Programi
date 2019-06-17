@@ -1,0 +1,55 @@
+@startuml
+
+title AbstractFactoryPattern
+
+
+abstract class AbstractFactoryManager{
+    +abstract Logging CreateLogging();
+    +abstract Caching CreateCaching();
+}
+
+class Fabricate1{
+    +Logging CreateLogging();
+    +Caching CreateCaching();
+}
+
+class Fabricate2{
+    +Logging CreateLogging();
+    +Caching CreateCaching();
+}
+
+abstract class Logging {
+  +abstract Log(string mesaj)
+}
+
+abstract class Caching {
+  +abstract Log(string data)
+}
+
+class log4NetLogger{
+    +Log(string mesaj)
+}
+
+class NLogger{
+    +Log(string mesaj)
+}
+
+class GlobalCache{
+    +Log(string data)
+}
+
+class LocalCache{
+    +Log(string data)
+}
+
+Caching <|-down- LocalCache
+Caching <|-down- GlobalCache
+
+Logging <|-down- log4NetLogger
+Logging <|-down- NLogger
+
+AbstractFactoryManager <|-down- Fabricate1
+AbstractFactoryManager <|-down- Fabricate2
+
+
+@enduml
