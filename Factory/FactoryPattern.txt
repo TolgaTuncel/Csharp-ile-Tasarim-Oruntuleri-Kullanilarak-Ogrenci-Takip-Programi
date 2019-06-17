@@ -1,0 +1,42 @@
+@startuml
+
+title FactoryPattern
+
+
+class Factory {
+  -IBildirimFactory _bildirimFactory
+  +BildirimManagerFactory()
+  +void Save()
+}
+
+class LoggerFactory1{
+    +IBildirim BildirimOlustur()
+}
+
+class LoggerFactory2{
+    +IBildirim BildirimOlustur()
+}
+
+interface IBildirimFactory{
+    +IBildirim BildirimOlustur()
+}
+
+interface IBildirim{
+    +void Log()
+}
+
+class MailBildirim{
+    +void Log()
+}
+
+class SMSBildirim{
+    +void Log()
+}
+
+
+IBildirim <|-down- MailBildirim: Inheritance
+IBildirim <|-down- SMSBildirim: Inheritance
+IBildirimFactory <|-down- LoggerFactory1: Inheritance
+IBildirimFactory <|-down- LoggerFactory2: Inheritance
+
+@enduml
