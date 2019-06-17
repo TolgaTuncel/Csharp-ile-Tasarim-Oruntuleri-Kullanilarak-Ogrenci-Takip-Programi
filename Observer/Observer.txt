@@ -1,0 +1,32 @@
+@startuml
+
+title ObserverPattern
+
+
+abstract class Observer {
+    +Abstract void Update()
+}
+
+class Observerr{
+    +void ProgramGüncelle()
+    +void Attach()
+    +void Detach()
+    -void Notify()
+
+}
+
+class IlkAsamaObserver{
+    +Decimal Update()
+}
+class IkinciAsamaObserver{
+    +Decimal Update()
+}
+class TamObserver{
+    +Decimal Update()
+}
+
+Observer <|-down- IlkAsamaObserver
+Observer <|-down- IkinciAsamaObserver
+Observer <|-down- TamObserver
+
+@enduml
