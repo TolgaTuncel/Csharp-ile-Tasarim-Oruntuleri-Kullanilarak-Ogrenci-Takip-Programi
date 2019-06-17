@@ -1,0 +1,26 @@
+@startuml
+
+title PrototypePattern
+
+
+class Etkinlik {
+  +string Adi
+  +string DersAdi
+  +Adres Adres
+}
+
+class Adres{
+    +string Adres
+}
+
+abstract class IPrototype{
+    +TClone()
+    +TDeepCoppy()
+}
+
+
+IPrototype <|-down- Etkinlik: Inheritance
+Etkinlik "1" *-up- "many" Adres: Composition
+
+
+@enduml
