@@ -1,0 +1,38 @@
+@startuml
+
+title Iterator Pattern
+
+interface IAggregate{
+    +IIterator CreateIterator()
+}
+
+interface Iteratorr{
+    +bool HasItem()
+    +Personel NexItem()
+    +Personel CurrentItem()
+}
+
+class Personel{
+    +int Id
+    +string Adi
+    +string Soyadi
+}
+
+class PersonelIterator{
+    +int CurrentIndex
+    +bool HasItem()
+    +Personel CurrentItem()
+}
+
+class PersonelAggregate{
+    +int Count
+    +void Add()
+    +Personel GetItem()
+}
+
+
+
+Iteratorr <|-down- PersonelIterator
+IAggregate <|-down- PersonelAggregate
+
+@enduml
