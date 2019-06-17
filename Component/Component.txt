@@ -1,0 +1,29 @@
+@startuml
+
+title Component(Composite) Pattern
+
+interface IPersonel{
+    +string Adý
+    +string Gorevi
+}
+
+class Contractor{
+    +string Adý
+    +string Gorevi
+}
+
+class Calisan{
+    +string Adý
+    +string Gorevi
+    +void AddSubordinate
+    +void RemoveSubordinate
+    +IPersonel GetSubordinate
+    +IEnumerator<IPersonel> GetEnumerator
+    +IEnumerator IEnumerable.GetEnumerator
+}
+
+IPersonel <|-down- Calisan
+IPersonel <|-down- Contractor
+
+
+@enduml
